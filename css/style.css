@@ -1,0 +1,98 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e3e6ec;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #e3e6ec;
+}
+
+/* Features Section Styles */
+.features {
+    padding: 50px 0;
+}
+
+.feature h3 {
+    font-size: 1.75rem;
+}
+
+.feature p {
+    font-size: 1.1rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
+
+    .feature h3 {
+        font-size: 1.5rem;
+    }
+
+    .feature p {
+        font-size: 1rem;
+    }
+}
+
+
