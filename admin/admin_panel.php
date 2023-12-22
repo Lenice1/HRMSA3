@@ -2,30 +2,31 @@
 session_start();
 require_once '../config.php';
 
-// Check if the user is logged in as an admin
+
 if (!isset($_SESSION['admin'])) {
     header('Location: login.php');
     exit();
 }
 
-// Subscriber CRUD Operations
+
 if (isset($_GET['action']) && isset($_GET['id'])) {
     $action = $_GET['action'];
     $id = $_GET['id'];
 
     if ($action === 'view') {
-        // View Subscriber Details
+
         $view_query = "SELECT * FROM subscribers WHERE id = $id";
         $result = $conn->query($view_query);
         $subscriber = $result->fetch_assoc();
     } elseif ($action === 'edit') {
-        // Edit Subscriber Details
+    
+
         $edit_query = "SELECT * FROM subscribers WHERE id = $id";
         $result = $conn->query($edit_query);
         $subscriber = $result->fetch_assoc();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Update Subscriber Information
+
             $name = mysqli_real_escape_string($conn, $_POST['name']);
             $email = mysqli_real_escape_string($conn, $_POST['email']);
             $gender = mysqli_real_escape_string($conn, $_POST['gender']);
@@ -41,7 +42,8 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
             }
         }
     } elseif ($action === 'delete') {
-        // Delete Subscriber
+
+
         $delete_query = "DELETE FROM subscribers WHERE id = $id";
 
         if ($conn->query($delete_query) === TRUE) {
@@ -55,7 +57,8 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         exit();
     }
 } else {
-    // List all subscribers
+
+
     $list_query = "SELECT * FROM subscribers";
     $result = $conn->query($list_query);
     $subscribers = $result->fetch_all(MYSQLI_ASSOC);
@@ -67,7 +70,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
 <h2>Admin Panel</h2>
 
 <?php if (isset($subscriber)): ?>
-    <!-- View or Edit Subscriber Details -->
+
     
     <h3><?php echo $subscriber['name']; ?>'s Details</h3>
     <p>Name: <?php echo $subscriber['name']; ?></p>
@@ -88,7 +91,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     <?php endif; ?>
 
 <?php else: ?>
-    <!-- List all subscribers -->
+ 
     <h3>All Subscribers</h3>
     <table border="1">
         <tr>

@@ -2,25 +2,25 @@
 require_once '../config.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate and sanitize form data
+ 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
 
-    // Validate email format
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email format";
     } else {
-        // Check if the email address is already in use
+      
         $check_email_query = "SELECT * FROM subscribers WHERE email = '$email'";
         $result = $conn->query($check_email_query);
 
         if ($result->num_rows > 0) {
             echo "Email address is already in use";
         } else {
-            // Upload profile picture
-            $profile_picture = "default_profile_picture.jpg"; // Default picture
+        
+            $profile_picture = "default_profile_picture.jpg";
             if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
                 $target_dir = "profile_pictures/";
                 $target_file = $target_dir . basename($_FILES["profile_picture"]["name"]);
@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
 
-            // Insert data into the database
+   
             $insert_query = "INSERT INTO subscribers (name, email, gender, address, profile_picture) VALUES ('$name', '$email', '$gender', '$address', '$profile_picture')";
 
             if ($conn->query($insert_query) === TRUE) {
-                // Redirect to a thank you page or home page
+               
                 header('Location: send_email.php');
             } else {
                 echo "Error: " . $insert_query . "<br>" . $conn->error;
@@ -52,14 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'home.php'; ?>
 
-<!-- Content Section -->
+
 <section class="content">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 class="mb-4">Register for HRMS</h2>
 
-                <!-- Registration Form -->
+                
                 <form action="" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>

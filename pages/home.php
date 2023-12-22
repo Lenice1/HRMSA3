@@ -45,7 +45,7 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
+    
     <section class="hero">
         <div class="container">
             <h1 class="display-4">Welcome to HRMS</h1>
@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+   
     <section class="features">
         <div class="container">
             <h2 class="text-center mb-5">Key Features</h2>
@@ -81,7 +81,7 @@
         </div>
     </section>
 
-    <!-- Bootstrap JS (optional, for features like Navbar toggling) -->
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

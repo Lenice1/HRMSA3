@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check login credentials 
+   
     if ($_POST['adminUsername'] === 'admin' && $_POST['adminPassword'] === '@dministrat0r') {
         $_SESSION['admin'] = true;
 

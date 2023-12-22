@@ -1,9 +1,9 @@
-/* Global Styles */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navbar Styles */
+
 .navbar {
     background-color: #343a40;
 }
@@ -20,7 +20,7 @@ body {
     color: #e3e6ec;
 }
 
-/* Hero Section Styles */
+
 .hero {
     background-color: #007bff;
     color: #ffffff;
@@ -51,7 +51,7 @@ body {
     background-color: #e3e6ec;
 }
 
-/* Features Section Styles */
+
 .features {
     padding: 50px 0;
 }
@@ -64,7 +64,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Footer Styles */
+
 footer {
     background-color: #343a40;
     color: #ffffff;
@@ -72,7 +72,7 @@ footer {
     text-align: center;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
